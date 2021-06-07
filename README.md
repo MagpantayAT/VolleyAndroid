@@ -53,9 +53,10 @@ import java.util.Map;
                     // below are the strings which we
                     // extract from our json object.
                     String result = respObj.getString("result");
+                    String username = respObj.getString("uname");
 
                     // we just toast the value we got from API, 1 for success, 0 otherwise
-                    Toast.makeText(MainActivity.this, "result is " + result, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "result is " + result + ", Hello " + username, Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
