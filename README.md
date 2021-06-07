@@ -26,7 +26,7 @@ import java.util.Map;
     private void postDataUsingVolley(final String uname, final String pass) {
 
         // url to post our data
-        String url = "https://yourURL/api/login";
+        String url = "http://yourURL/api/login.php";
         // loading pogress bar this is optional
         loadingPB.setVisibility(View.VISIBLE);
 
