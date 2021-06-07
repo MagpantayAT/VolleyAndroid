@@ -7,15 +7,16 @@ How to setup Volley to Post data from Android to you API
 
 ### Setting up your Java code
 - Go to the Java file that needs to communciate with your API and import the following:
+```
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
-`import com.android.volley.Request;`
-`import com.android.volley.RequestQueue;`
-`import com.android.volley.VolleyError;`
-`import com.android.volley.toolbox.StringRequest;`
-`import com.android.volley.toolbox.Volley;`
+import org.json.JSONException;
+import org.json.JSONObject;
 
-`import org.json.JSONException;`
-`import org.json.JSONObject;`
-
-`import java.util.HashMap;`
-`import java.util.Map;`
+import java.util.HashMap;
+import java.util.Map;
+```
