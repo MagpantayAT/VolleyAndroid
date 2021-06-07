@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private void postDataUsingVolley(final String uname, final String pass) {
 
         // url to post our data
-        String url = "http://localhost/api/login.php";
+        String url = "http://your-ip-add/api/login.php";
         // loading pogress bar this is optional
         loadingPB.setVisibility(View.VISIBLE);
 
