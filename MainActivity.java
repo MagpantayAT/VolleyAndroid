@@ -24,8 +24,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private ProgressBar loadingPB;
-
     private Button btnLogin;
+    private EditText etUname, etPass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         loadingPB = findViewById(R.id.idLoadingPB);
 
+        etUname = findViewById(R.id.etUsername);
+        etPass = findViewById(R.id.etPassword);
+
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                postDataUsingVolley("dfdfg", "dfgfgd");
+                postDataUsingVolley(etUname.getText().toString(), etPass.getText().toString());
             }
         });
     }
@@ -46,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private void postDataUsingVolley(final String uname, final String pass) {
 
         // url to post our data
-        String url = "http://your-ip-add/api/login.php";
+        String url = "http://10.0.0.106/api/login.php";
         // loading pogress bar this is optional
         loadingPB.setVisibility(View.VISIBLE);
 
@@ -73,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
                     // below are the strings which we
                     // extract from our json object.
                     String result = respObj.getString("result");
+                    String username = respObj.getString("uname");
 
                     // we just toast the value we got from API, 1 for success, 0 otherwise
-                    Toast.makeText(MainActivity.this, "result is " + result, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "result is " + result + ", Hi " + username, Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
