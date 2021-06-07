@@ -91,3 +91,4 @@ import java.util.Map;
     }
 ```
 - to connect, just simply call the method `postDataUsingVolley("username", "password");`
+- in case of `NoConnectionError` please add this in your manifest file inside the application tag `android:usesCleartextTraffic="true"`
